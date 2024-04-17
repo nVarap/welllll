@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> <!-- Include jQuery -->
+</head>
+
+<body style="background-color: purple;">
+    <h1> Linkr Companies </h1>
+    <div th:each="c : ${companies}" style="background-color: white;">
+        <p>Company Name:<span th:text="${c.name}"></span></p>
+        <p>Ceo: <span th:text="${c.ceo}"></span></p>
+        <p>Mission: <span th:text="${c.mission}"></span></p>
+        <button th:data-id="${c.id}" th:onclick="deleteCompany(this.getAttribute('data-id'));">Delete</button>
+    </div>
+
+    <script>
+        function deleteCompany(companyId) {
+            if (confirm("Are you sure you want to delete this company?")) {
+                var numericCompanyId = parseInt(companyId);
+                
+                $.ajax({
+                    url: '/api/companies/' + parseInt(companyId),
+                    type: 'DELETE',
+                    success: function (result) {
+                        // Handle success, for example, remove the deleted company from the UI
+                        // You may need to reload the page or update the UI in some way
+                        location.reload();
+                    },
+                    error: function (error) {
+                        // Handle error, for example, show an alert
+                        alert('Failed to delete the company.');
+                        alert(companyId);
+                        alert(numericCompanyId);
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

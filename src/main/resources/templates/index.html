@@ -1,0 +1,75 @@
+<!-- This page is illustrative and contains ideas about HTML formatting -->
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/base}" lang="en">
+
+<head>
+    <title>Intro</title>
+</head>
+
+<body>
+<th:block layout:fragment="body" th:remove="tag">
+    <!-- Start of body content specific to page -->
+    <div class="px-5 py-5 mx-auto">
+        <h1><strong>Jobify Backend</strong></h1>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" th:src="@{/images/java.png}" alt="Java Development" height="250">
+                    <div class="card-body">
+                    <h5 class="card-title">The internship feature</h5>
+                    <p class="card-text">
+                        <ol>
+                            <li>Jobify offers a unique Tinder-like feature for students to swipe left or right on internships, streamlining the internship search process.</li>
+                            <li>Through the swipe feature, students can quickly browse through internship opportunities and indicate their interest with a simple swipe.</li>
+                            <li>Internship listings on Jobify can view students' grades, providing them with insight into the academic performance of potential candidates.</li>
+                            <li>This feature facilitates a more personalized and efficient internship matching process, enhancing students' chances of securing relevant opportunities.</li>
+                        </ol>
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" th:src="@{/images/spring.png}" alt="Spring Development" height="250">
+                    <div class="card-body">
+                    <h5 class="card-title">The assignments and grades feaature</h5>
+                    <p class="card-text">
+                        <ol>
+                            <li>Jobify's grading and assignments features enable seamless submission and grading processes for students and teachers.</li>
+                            <li>Students can submit assignments directly through the platform, eliminating the need for traditional paper submissions.</li>
+                            <li>Teachers can efficiently grade assignments online, providing timely feedback to students to enhance learning outcomes.</li>
+                            <li>The platform also offers a flashcard feature, allowing students to create interactive study materials to aid in exam preparation.</li>
+                        </ol>
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" th:src="@{/images/pojo.jpeg}" alt="Java Persistence" height="250">
+                    <div class="card-body">
+                    <h5 class="card-title">The schedule feature</h5>
+                    <p class="card-text">
+                        <ol>
+                            <li>Jobify's schedule feature empowers students to manage their time effectively by creating personalized schedules.</li>
+                            <li>Students can input their class schedules and extracurricular activities into the platform to visualize their daily routines.</li>
+                            <li>The schedule feature includes countdown timers, allowing students to track how much time they have left in each class or activity.</li>
+                            <li>By providing a comprehensive overview of their commitments, Jobify helps students prioritize tasks and stay organized.</li>
+                        </ol>
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- End of body content specific to page -->
+</th:block>
+</body>
+
+</html>
